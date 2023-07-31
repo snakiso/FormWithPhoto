@@ -1,0 +1,89 @@
+<div class="form-block">
+    <div class="form-block__inner-box">
+        <span class="form-block__title">регистрация</span>
+        <form class="form" action="https://code.projectroom.digital/request/" method="POST" enctype="multipart/form-data">
+            <div class="form__top">
+                <div class="form__top-inputs">
+                    <div class="form__input-block">
+                        <label for="first-name">Фамилия</label>
+                        <input class="input" type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form__input-block">
+                        <label for="second-name">Имя</label>
+                        <input class="input" type="text" id="second-name" name="second-name" required>
+                    </div>
+                    <div class="form__input-block">
+                        <label for="third-name">Отчество</label>
+                        <input class="input" type="text" id="third-name" name="third-name" required>
+                    </div>
+                </div>
+                <div class="form__photo-block">
+                    <input type="hidden" name="cropPhoto" id="cropPhoto" class="input-file">
+                    <input type="file" name="photo" id="files" class="input-file" accept=".jpg, .jpeg"
+                        onChange="myFunc(this)" required>
+                    <span class="form__photo-block-title">Фото</span>
+                    <span class="form__photo-block-subtitle">формат jpg, до 100 мб</span>
+                    <div class="form__photo-box">
+                        <span class="form__photo-box-button"></span>
+                    </div>
+                    <div class="form__photo-block-nav">
+                        <span class="form__photo-block-nav-item zoom-in" data-method="zoom" data-option="0.1"><img src="@img/zoomIn.png" alt=""></span>
+                        <span class="form__photo-block-nav-item zoom-out"><img src="@img/zoomOut.png" alt=""></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form__central">
+                <div class="form__input-block form__input-block_little-margin">
+                    <label for="position">Должность</label>
+                    <input class="input" type="text" id="position" name="position" required>
+                </div>
+                <div class="form__input-block form__input-block_little-margin">
+                    <label for="organization">Организация</label>
+                    <input class="input" type="text" id="organization" name="organization" required>
+                </div>
+                <div class="form__input-block form__input-block_check">
+                    <label for="speaker">Приглашен в качестве спикера</label>
+                    <input class="checkbox" type="checkbox" id="speaker" name="speaker" >
+                    <span class="custom-checkbox"></span>
+                </div>
+                <div class="form__input-block form__select2-block form__input-block_little-margin">
+                    <label  for="category">Категория бейджа</label>
+                    <select class="js-example-basic-single" name="сategory" id="category" required>
+                        <option value="" selected disabled>Выберите категорию</option>
+                        <option value="1">Участник</option>
+                        <option value="2">Журналист</option>
+                        <option value="3">Зритель</option>
+                        <option value="4">Организатор</option>
+                    </select>
+                </div>
+                <div class="form__contacts-block">
+                    <div class="form__input-block">
+                        <label for="tel">Телефон</label>
+                        <input class="input" type="tel" id="tel" name="tel" data-length="11"  required>
+                    </div>
+                    <div class="form__input-block">
+                        <label for="email">Почта</label>
+                        <input class="input" type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form__input-block form__select2-block form__input-block_little-margin">
+                    <label for="category">Cубъект РФ</label>
+                    <select class="select js-example-basic-single" name="state" required>
+                        <option value="" selected disabled>Выберите регион</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form__bottom">
+                <div class="form__input-block form__input-block_accept">
+                    <label class="form__label-for-checkbox" for="accept">Согласен(-на) на обработку персональных данных</label>
+                    <input class="checkbox checkbox_little" type="checkbox" id="accept" name="accept" required>
+                    <span class="custom-checkbox custom-checkbox_little"></span>
+                </div>
+                <div class="form__send-block">
+                    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                    <button class="button button-send"><img src="@img/button-arrow.svg" alt="">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

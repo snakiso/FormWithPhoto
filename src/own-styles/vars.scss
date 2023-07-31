@@ -1,0 +1,42 @@
+//Цвета
+$color-main: #222222;
+$color-secondary: #22B856;
+$color-text: #444444;
+
+
+//Размеры шрифта
+$size-title: 60px;
+$size-subtitle: 24px;
+$size-text: 18px;
+$size-mobile-title: 38px;
+$size-mobile-subtitle: 20px;
+$size-mobile-text: 16px;
+
+
+//Семейства шрифтов
+
+
+//Отступы
+$offset-bigest: 100px;
+$offset-big: 60px;
+$offset-middle: 40px;
+$offset-main: 30px;
+$offset-secondary: 20px;
+
+
+
+//Контейнер
+
+$container-width: calc(1270px + 30px*2);
+
+
+//Наборы свойств 
+
+
+%text-settings {
+  font-size: $size-text;
+  line-height: 1.44em;
+  letter-spacing: 0.04em;
+  color: $color-text;
+}
+

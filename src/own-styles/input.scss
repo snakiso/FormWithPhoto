@@ -1,0 +1,26 @@
+.input {
+  border-radius: 3px;
+  border: 1px solid  #B7B7B7;
+  height: 42px;
+  background: #FAFDFF;
+  margin-top: 8px;
+  padding-left: 15px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+}
+
+
+.input-file{
+  position: absolute;
+  bottom: 25px;
+  opacity: 0;
+  z-index: 2;
+  height: 220px;
+  width: 200px;
+  cursor: pointer;
+}
+
+
+#cropPhoto{
+  visibility: hidden;
+}

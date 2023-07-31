@@ -1,0 +1,247 @@
+.form-block {
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  width: 100%;
+
+
+  &__inner-box {
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.91);
+  }
+
+  &__title {
+    display: block;
+    color: #01207B;
+    font-size: 46px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+
+  @include mobile {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}
+
+.form {
+  margin-top: 40px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__top-inputs {
+    max-width: 650px;
+    flex: 1;
+    margin-right: 30px;
+  }
+
+  &__photo-block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__photo-block-subtitle {
+    color: #797979;
+  }
+
+  &__photo-box {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    width: 200px;
+    height: 216px;
+    border: 1px solid #B7B7B7;
+    border-radius: 3px;
+    background-image: url(../img/img.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__photo-box-remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 5;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__photo-box-img {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__photo-block-nav {
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    column-gap: 20px;
+    opacity: 0;
+  }
+
+  &__photo-block-nav-item {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    width: 20px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__photo-box-button {
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(217, 217, 217, 0.38);
+    border-radius: 50%;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      border-radius: 3px;
+      background-color: #01207B;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &::before {
+      width: 12px;
+      height: 1.5px;
+      top: 12px;
+    }
+
+    &::after {
+      height: 12px;
+      width: 1.5px;
+      top: 7px;
+    }
+  }
+
+  &__input-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    flex: 1;
+
+    &_check {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &_accept {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    &_little-margin {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__select2-block {
+    label {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__contacts-block {
+    display: flex;
+    column-gap: 30px;
+  }
+
+  &__bottom {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__send-block {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+  }
+
+  &__label-for-checkbox {
+    font-size: 14px;
+  }
+
+
+  @include mobile {
+
+    &__top {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    &__top-inputs {
+      max-width: 100%;
+      width: 100%;
+      margin: 0
+    }
+
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__send-block {
+      flex-direction: column;
+      row-gap: 15px;
+    }
+
+    &__contacts-block {
+      flex-direction: column
+    }
+
+    &__input-block {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  }
+}

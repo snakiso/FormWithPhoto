@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('blocks/common/head/head.html',{
+"title": "Форма регистрации"
+})
+
+<body>
+  <div class="page">
+    <main>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      @@include('blocks/form/form.html',{})
+    </main>
+  </div>
+  <script src="./js/cropper.js"></script>
+  <script src="./js/select.js"></script>
+  <script src="./js/photo.js"></script>
+  <script src="./js/cleave.min.js"></script>
+  <script src="./js/phoneformatter.js"></script>
+</body>
+
+</html>
