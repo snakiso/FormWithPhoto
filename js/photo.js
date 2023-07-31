@@ -6,6 +6,7 @@ let imagesList = document.querySelector('.form__photo-box'); //Контейне�
 let addBtn = document.querySelector('.form__photo-box-button'); //Кнопка выбора файла
 let cropPhoto = document.querySelector("#cropPhoto");
 let PhotoNav = document.querySelector('.form__photo-block-nav');
+let inputFiles = document.querySelector('#files');
 
 window.addEventListener('dragenter', (e) => {
   e.preventDefault()
@@ -31,23 +32,34 @@ dragAndDrop.addEventListener('drop', (e) => { //перетягивание
 })
 
 
-function removeImg() { //Удаление изображения
+function removeImg(files) { //Удаление изображения
   let removeButton = document.querySelector('.form__photo-box-remove-btn');
   removeButton.addEventListener('click', () => {
-    addBtn.style.display = 'block'
+
     cropper.destroy()
     document.querySelector('.form__photo-box-img').remove()
     removeButton.remove()
+
     imagesList.style.zIndex = "1"
+    dragAndDrop.style.background = 'none'
+
+    dragAndDrop.style.backgroundImage = 'url("./img/img.png")'
+    dragAndDrop.style.backgroundRepeat = 'no-repeat'
+    dragAndDrop.style.backgroundPosition = 'center'
+    dragAndDrop.style.border = '1px solid #B7B7B7'
     PhotoNav.style.opacity = '0'
     imagesForUpload = []
+    inputFiles.value = null
   })
 }
 
 
 function createImg(files) {  //функция создания изображения
   dragAndDrop.style.background = 'none'
-  dragAndDrop.style.border = 'none'
+  dragAndDrop.style.backgroundImage = 'url("./img/img.png")'
+  dragAndDrop.style.backgroundRepeat = 'no-repeat'
+  dragAndDrop.style.backgroundPosition = 'center'
+  dragAndDrop.style.border = '1px solid #B7B7B7'
 
   for (let i = 0; i < files.length; i++) {
     if (files.length > 1) {
@@ -97,12 +109,9 @@ function createImg(files) {  //функция создания изображе�
 imagesList.addEventListener('mouseout', () => {
   if (cropper) {
     cropper.getCroppedCanvas().toBlob((blob) => {
-
       cropPhoto.value = blob
-
     });
   }
-
 })
 
 
