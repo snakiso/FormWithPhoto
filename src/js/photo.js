@@ -7,20 +7,19 @@ let addBtn = document.querySelector('.form__photo-box-button'); //Кнопка �
 let cropPhoto = document.querySelector("#cropPhoto");
 let PhotoNav = document.querySelector('.form__photo-block-nav');
 
-dragAndDrop.addEventListener('dragenter', (e) => {
+window.addEventListener('dragenter', (e) => {
   e.preventDefault()
-  console.log('drop')
-  
+  dragAndDrop.style.background = 'rgb(0,0,0, 0.2)'
+  dragAndDrop.style.border = '2px dashed red'
 })
+
 dragAndDrop.addEventListener('dragleave', (e) => {
   e.preventDefault()
-  console.log('drop')
- 
-
 })
+
 dragAndDrop.addEventListener('dragover', (e) => {
   e.preventDefault()
-  console.log('drop')
+
 })
 
 dragAndDrop.addEventListener('drop', (e) => { //перетягивание
@@ -28,7 +27,7 @@ dragAndDrop.addEventListener('drop', (e) => { //перетягивание
   const files = e.dataTransfer.files
   createImg(files)
   removeImg()
-  console.log('drop')
+
 })
 
 
@@ -47,6 +46,8 @@ function removeImg() { //Удаление изображения
 
 
 function createImg(files) {  //функция создания изображения
+  dragAndDrop.style.background = 'none'
+  dragAndDrop.style.border = 'none'
 
   for (let i = 0; i < files.length; i++) {
     if (files.length > 1) {
